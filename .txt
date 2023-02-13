@@ -1,0 +1,11 @@
+    <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <img class="img-thumbnail" src="/images/profile.jpg" alt="">
+                    </div>
+                    <div class="col-8">
+                        <div class="username"><p>Name: </p><span>Dwy</span></div>
+                        <div class="username"><p>Tanggal Lahir: </p><span>Dwy</span></div>
+                    </div>
+                </div>
+            </div>
