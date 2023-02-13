@@ -1,0 +1,70 @@
+<!-- <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">User Details</h4>
+            </div>
+            <div class="modal-body">
+                <div class="username">
+                    <p>Name: </p><span></span>
+                </div>
+                <div class="position">
+                    <p>Position: </p><span></span>
+                </div>
+                <div class="office">
+                    <p>Office: </p><span></span>
+                </div>
+                <div class="age">
+                    <p>Age: </p><span></span>
+                </div>
+                <div class="date">
+                    <p>Start date: </p><span></span>
+                </div>
+                <div class="salary">
+                    <p>Salary: </p><span></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="modal fade" id="myModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detail Atlet</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-4" >
+                        <img class="img-fluid" src="/images/profile.jpg" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p  class="card-text">
+                                <div class="nama"><p>Name: </p><span></span></div>
+                                <div class="tanggal"><p>Tanggal Lahir: </p><span></span></div>
+                                <div class="kecamatan"><p>Kecamatan: </p><span></span></div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+.modal-body div{float:left; width: 100%}
+.modal-body div span{float:left; width: 70%}
+.modal-body div p{float:left; width: 30%; font-weight: 600;} 
+</style>
