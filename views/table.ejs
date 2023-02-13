@@ -68,6 +68,7 @@
                                 <th>Nama</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Cab-Or</th>
+                                <th>Kecamatan</th>
                                 <th>Penghargaan</th>
                             </tr>
                         </thead>
@@ -77,6 +78,7 @@
                                 <td>Dwy</td>
                                 <td>20/04/2000</td>
                                 <td>Karate</td>
+                                <td>Kramat</td>
                                 <td>5</td>
                             </tr>
                             <tr>
@@ -84,6 +86,7 @@
                                 <td>Dwy</td>
                                 <td>20/04/2000</td>
                                 <td>Karate</td>
+                                <td>Kramat</td>
                                 <td>5</td>
                             </tr>
                             <tr>
@@ -91,6 +94,7 @@
                                 <td>Dwy</td>
                                 <td>20/04/2000</td>
                                 <td>Karate</td>
+                                <td>Slawi</td>
                                 <td>5</td>
                             </tr>
                             <tr>
@@ -98,6 +102,7 @@
                                 <td>Dwy</td>
                                 <td>20/04/2000</td>
                                 <td>Karate</td>
+                                <td>Slawi</td>
                                 <td>5</td>
                             </tr>
                             <tr>
@@ -105,6 +110,7 @@
                                 <td>Dwy</td>
                                 <td>20/04/2000</td>
                                 <td>Karate</td>
+                                <td>Adiwerna</td>
                                 <td>5</td>
                             </tr>
                         </tbody>
@@ -163,13 +169,12 @@
 <script>
     jQuery(document).ready(function ($) {
         $('#example').DataTable({
-            searching: false,
+            searching: true,
             responsive: true,
             "autoWidth": false,
         });
         var table = $('#example').DataTable();
         $('#example tbody').on('click', 'tr', function () {
-            //console.log(table.row(this).data());
             $(".modal-body div span").text("");
             $(".username span").text(table.row(this).data()[0]);
             $(".position span").text(table.row(this).data()[1]);
