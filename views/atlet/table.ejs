@@ -12,59 +12,30 @@
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
+                            <th>Tempat Lahir</th>
                             <th>Tanggal Lahir</th>
                             <th>Alamat</th>
-                            <th>Cab-Or</th>
+                            <th>Kecamatan</th>
+                            <th>CabOr</th>
                             <th>Pelatih</th>
-                            <th>Penghargaan</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Kramat</td>
-                            <td>5</td>
-                            <td>5</td>
+                            <% if(atlet.length){ for(var i=0; i< atlet.length; i++){%>
+                                <th scope="row" class="text-center">
+                                    <%= (i+1)%>
+                                </th>
+                                <td><%= atlet[i].nama%></td>
+                                <td><%= atlet[i].tempat_lahir%></td>
+                                <td><%= atlet[i].tgl_lahir%></td>
+                                <td><%= atlet[i].alamat%></td>
+                                <td><%= atlet[i].kecamatan%></td>
+                                <td><%= atlet[i].cabor%></td>
+                                <td><%= atlet[i].pelatih%></td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Kramat</td>
-                            <td>5</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Slawi</td>
-                            <td>5</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Slawi</td>
-                            <td>5</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Adiwerna</td>
-                            <td>5</td>
-                            <td>5</td>
-                        </tr>
+                        <%} }else{ %>
+                            <% } %>
                     </tbody>
                 </table>
             </div>

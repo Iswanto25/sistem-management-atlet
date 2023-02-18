@@ -3,12 +3,17 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var flash   = require('express-flash');
+var session = require('express-session');
+
+var connection = require('./config/db')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var atletRouter = require('./routes/atlet');
 var pelatihRouter = require('./routes/pelatih');
 var vanueRouter = require('./routes/vanue');
+var adminRouter = require('./routes/admin');
 
 var app = express();
 
@@ -16,6 +21,17 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: 't@1k0ch3ng',
+  name: 'secretName',
+  cookie: {
+      sameSite: true,
+      maxAge: 60000
+  },
+}))
+app.use(flash())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -27,6 +43,7 @@ app.use('/users', usersRouter);
 app.use('/atlet', atletRouter);
 app.use('/vanue', vanueRouter);
 app.use('/coach', pelatihRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
