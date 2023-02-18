@@ -1,0 +1,74 @@
+<title>
+    <%= title; %>
+</title>
+<nav class="navbar navbar-expand-lg bg-body-secondary border-bottom fixed-top"
+    style="padding-left: 30px; padding-right: 30px;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo.png" alt="Bootstrap" width="55">
+        </a>
+        <div>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <div class="dropdown">
+                    <button class="btn-light btn dropdown-toggle border" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Profile <span><i class="fa-regular fa-user"></i></span>
+                    </button>
+                    <ul class="dropdown-menu me-5" style="margin-right: 30px;">
+                        <div class="card-body box-profile">
+                            <div class="text-center">
+                                <img class="profile-user-img img-fluid img-circle" src="/images/profile.jpg"
+                                    alt="User profile picture" width="30">
+                            </div>
+                            <h4 class="profile-username text-center">Admin</h4>
+                            <a href="#" class="btn btn-primary btn-block"><b>Profile</b></a>
+                            <a href="#" class="btn btn-primary btn-block"><b>Logout</b></a>
+                        </div>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid" style="padding-top: 100px;">
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Dashboard</h1>
+                    <a data-bs-target="#addAtlet" data-bs-toggle="modal" type="button" class="btn btn-secondary btn-sm">
+                        Tambah Atlet</a>
+
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">
+                            <%= title; %>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include ('../layouts/nav'); %>
+        <!-- atlet -->
+        <%- include ('./tableAtlet'); %>
+            <%- include ('./addAtlet'); %>
+                <%- include ('./deleteAtlet'); %>
+                    <%- include ('./editAtlet'); %>
+
+                        <!-- Pelatih -->
+                        <%- include ('./tablePelatih'); %>
+                            <%- include ('./addPelatih'); %>
+                                <%- include ('./deletePelatih'); %>
+                                    <%- include ('./editPelatih'); %>
+
+                                    <!-- Vanue -->
+                                    <%- include ('./tableVanue'); %>
+                                    <%- include ('./addVanue'); %>
+                                    <%- include ('./deleteVanue'); %>
+                                    <%- include ('./editVanue'); %>
+</div>

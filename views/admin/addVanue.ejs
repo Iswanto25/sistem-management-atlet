@@ -1,0 +1,84 @@
+<form id="add-row-form" action="/admin/save/vanue" method="post">
+    <div id="addVanue" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Data Vanue</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row">
+                            <div class="col form-group">
+                                <label for="nama" class="form-label">Nama</label>
+                                <input id="nama" type="text" name="nama" class="form-control">
+                            </div>
+                            <div class="col form-group">
+                                <label for="kecamatan" class="form-label">Kecamatan</label>
+                                <select type="text" name="kecamatan" class="custom-select mr-sm-2"
+                                    id="model inlineFormCustomSelectPref">
+                                    <option selected>Kecamatan</option>
+                                    <option value="Margasari">Margasari</option>
+                                    <option value="Bumijawa">Bumijawa</option>
+                                    <option value="Bojong">Bojong</option>
+                                    <option value="Balapulang">Balapulang</option>
+                                    <option value="Pagerbarang">Pagerbarang</option>
+                                    <option value="Lebaksiu">Lebaksiu</option>
+                                    <option value="Jatinegara">Jatinegara</option>
+                                    <option value="Kedungbanteng">Kedungbanteng</option>
+                                    <option value="Pangkah">Pangkah</option>
+                                    <option value="Slawi">Slawi</option>
+                                    <option value="Dukuhwaru">Dukuhwaru</option>
+                                    <option value="Adiwerna">Adiwerna</option>
+                                    <option value="Dukuhturi">Dukuhturi</option>
+                                    <option value="Talang">Talang</option>
+                                    <option value="Tarub">Tarub</option>
+                                    <option value="Kramat">Kramat</option>
+                                    <option value="Suradadi">Suradadi</option>
+                                    <option value="Warureja">Warureja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col form-group">
+                                <label for="alamat" class="form-label">Alamat</label>
+                                <textarea class="form-control" name="alamat" id="alamat" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col form-group">
+                                <label for="cabor">Cabor</label>
+                                <select name="cabor" type="text" class="custom-select mr-sm-2"
+                                    id="model inlineFormCustomSelectPref">
+                                    <option selected>Cabor</option>
+                                    <option value="Atletik">Atletik</option>
+                                    <option value="Basket">Basket</option>
+                                    <option value="Bulutangkis">Bulutangkis</option>
+                                    <option value="Renang">Renang</option>
+                                    <option value="Catur">Catur</option>
+                                    <option value="Senam">Senam</option>
+                                    <option value="Taekwondo">Taekwondo</option>
+                                    <option value="Voli">Voli</option>
+                                    <option value="Karate">Karate</option>
+                                    <option value="Panahan">Panahan</option>
+                                    <option value="Pencak Silat">Pencak Silat</option>
+                                    <option value="Sepak Bola">Sepak Bola</option>
+                                    <option value="Sepak Takraw">Sepak Takraw</option>
+                                    <option value="Tenis Lapangan">Tenis Lapangan</option>
+                                    <option value="Tenis Meja">Tenis Meja</option>
+                                </select>
+                            </div>
+                            <div class="col form-group">
+                                <label for="tgl_bangun">Tanggal Bangun</label>
+                                <input type="date" class="form-control" name="tgl_bangun" id="tgl_bangun">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

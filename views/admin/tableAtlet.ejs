@@ -1,0 +1,159 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap4.min.css">
+<div class="card">
+    <div class="card-header">
+        <h4>Data Atlet</h4>
+    </div>
+    <div class="card-body table-responsive-xl">
+        <div class="row">
+            <div class="col-md-12">
+                <% if (messages.success) { %>
+                    <div class="alert alert-success" role="alert"><%- messages.success %>
+                            <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <% } %>
+                        <% if (messages.error) { %>
+                            <div class="alert alert-danger" role="alert"><%- messages.error %>
+                                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                            </div>
+                            <% } %>
+            </div>
+            <div class="col-md-12"></div>
+        </div>
+        <table class="table table-striped table-bordered" id="tableAtlet">
+            <thead class="table-dark">
+                <tr>
+                    <th>No</th>
+                    <th>NIK</th>
+                    <th>Nama</th>
+                    <th>Tempat Lahir</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Alamat</th>
+                    <th>Kecamatan</th>
+                    <th>Cabor</th>
+                    <th>Tahun Gabung</th>
+                    <th>Pelatih</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <% if(atlet.length){ for(var i=0; i< atlet.length; i++){%>
+                        <th scope="row" class="text-center">
+                            <%= (i+1)%>
+                        </th>
+                        <td>
+                            <%=atlet[i].nik%>
+                        </td>
+                        <td>
+                            <%=atlet[i].nama%>
+                        </td>
+                        <td>
+                            <%=atlet[i].tempat_lahir%>
+                        </td>
+                        <td>
+                            <%=atlet[i].tgl_lahir%>
+                        </td>
+                        <td>
+                            <%=atlet[i].jns_kelamin%>
+                        </td>
+                        <td>
+                            <%=atlet[i].alamat%>
+                        </td>
+                        <td>
+                            <%=atlet[i].kecamatan%>
+                        </td>
+                        <td>
+                            <%=atlet[i].cabor%>
+                        </td>
+                        <td>
+                            <%=atlet[i].tgl_gabung%>
+                        </td>
+                        <td>
+                            <%=atlet[i].pelatih%>
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <button href="javascript:void(0);" class="btn btn-sm btn-success edit"
+                                    data-id="<%=atlet[i].id_atlet%>" data-nama="<%=atlet[i].nama%>"
+                                    data-nik="<%=atlet[i].nik%>" data-tempat_lahir="<%=atlet[i].tempat_lahir%>"
+                                    data-tgl_lahir="<%=atlet[i].tgl_lahir%>"
+                                    data-jns_kelamin="<%=atlet[i].jns_kelamin%>" data-alamat="<%=atlet[i].alamat%>"
+                                    data-kecamatan="<%=atlet[i].kecamatan%>" data-cabor="<%=atlet[i].cabor%>"
+                                    data-tgl_gabung="<%=atlet[i].tgl_gabung%>" data-pelatih="<%=atlet[i].pelatih%>">
+                                    <i class="fa-solid fa-pen-clip"></i>
+                                </button>
+                                <button href="javascript:void(0);" class="btn btn-sm btn-danger delete" type="button"
+                                    data-id="<%= atlet[i].id_atlet %>">
+                                    <i class="fa-solid fa-delete-left"></i>
+                                </button>
+                            </div>
+                        </td>
+                </tr>
+                <%} }else{ %>
+                    <tr>
+                        <td colspan="12">
+                            <div class="alert alert-danger" role="alert">
+                                Data Kosong
+                                <a class="btn btn-danger btn-xs" style="text-decoration: none" data-bs-toggle="modal"
+                                    data-bs-target="#addAtlet">Tambah Data</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a data-bs-target="#addAtlet" data-bs-toggle="modal" type="button" class="btn btn-secondary btn-sm"> Tambah
+            Atlet</a>
+
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tableAtlet').DataTable();
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#tableAtlet").on("click", ".edit", function () {
+            var id_atlet = $(this).data("id");
+            var nama = $(this).data("nama");
+            var nik = $(this).data("nik");
+            var tempat_lahir = $(this).data("tempat_lahir");
+            var tgl_lahir = $(this).data("tgl_lahir");
+            var jns_kelamin = $(this).data("jns_kelamin");
+            var alamat = $(this).data("alamat");
+            var kecamatan = $(this).data("kecamatan");
+            var cabor = $(this).data("cabor");
+            var tgl_gabung = $(this).data("tgl_gabung");
+            var pelatih = $(this).data("pelatih");
+            $("#editAtlet").modal("show");
+            $(".id_atlet").val(id_atlet);
+            $(".nama").val(nama);
+            $(".nik").val(nik);
+            $(".tempat_lahir").val(tempat_lahir);
+            $(".tgl_lahir").val(tgl_lahir);
+            $(".jns_kelamin").val(jns_kelamin);
+            $(".alamat").val(alamat);
+            $(".kecamatan").val(kecamatan);
+            $(".cabor").val(cabor);
+            $(".tgl_gabung").val(tgl_gabung);
+            $(".pelatih").val(pelatih);
+        });
+        $("#tableAtlet").on("click", ".delete", function () {
+            var id_atlet = $(this).data("id");
+            $("#deleteAtlet").modal("show");
+            $(".product_id2").val(id_atlet);
+        });
+    });
+</script>

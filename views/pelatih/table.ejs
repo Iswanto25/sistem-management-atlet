@@ -12,59 +12,51 @@
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
+                            <th>Tempat Lahir</th>
                             <th>Tanggal Lahir</th>
+                            <th>Jenis Kelamin</th>
                             <th>Alamat</th>
-                            <th>Cab-Or</th>
-                            <th>Jumlah Atlet</th>
-                            <th>Penghargaan</th>
+                            <th>Kecamatan</th>
+                            <th>Cabor</th>
+                            <th>Tanggal Gabung</th>
+                            <th>Jabatan</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Kramat</td>
-                            <td>5</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Kramat</td>
-                            <td>5</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Slawi</td>
-                            <td>5</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Slawi</td>
-                            <td>5</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Adiwerna</td>
-                            <td>5</td>
-                            <td>5</td>
-                        </tr>
+                            <% if(pelatih.length){ for(var i=0; i< pelatih.length; i++){%>
+                                <th scope="row" class="text-center">
+                                    <%= (i+1)%>
+                                </th>
+                                <td>
+                                    <%=pelatih[i].nama%>
+                                </td>
+                                <td>
+                                    <%=pelatih[i].tempat_lahir%>
+                                </td>
+                                <td>
+                                    <%=pelatih[i].tgl_lahir%>
+                                </td>
+                                <td>
+                                    <%=pelatih[i].jns_kelamin%>
+                                </td>
+                                <td>
+                                    <%=pelatih[i].alamat%>
+                                </td>
+                                <td>
+                                    <%=pelatih[i].kecamatan%>
+                                </td>
+                                <td>
+                                    <%=pelatih[i].cabor%>
+                                </td>
+                                <td>
+                                    <%=pelatih[i].tgl_gabung%>
+                                </td>
+                                <td>
+                                    <%=pelatih[i].jabatan%>
+                                </td>
+                        <%} }else{ %>
+                            <% } %>
                     </tbody>
                 </table>
             </div>

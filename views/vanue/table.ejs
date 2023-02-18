@@ -13,46 +13,36 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>Alamat</th>
-                            <th>Cab-Or</th>
-                            <th>Jumlah Atlet</th>
+                            <th>Kecamatan</th>
+                            <th>Cabor</th>
+                            <th>Tanggal Bangun</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Kramat</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Kramat</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Slawi</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Slawi</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Dwy</td>
-                            <td>20/04/2000</td>
-                            <td>Karate</td>
-                            <td>Adiwerna</td>
-                        </tr>
+                            <% if(cabor.length){ for(var i=0; i< cabor.length; i++){%>
+                                <th scope="row" class="text-center">
+                                    <%= (i+1)%>
+                                </th>
+                                <td>
+                                    <%=cabor[i].nama%>
+                                </td>
+                                <td>
+                                    <%=cabor[i].alamat%>
+                                </td>
+                                <td>
+                                    <%=cabor[i].kecamatan%>
+                                </td>
+                                <td>
+                                    <%=cabor[i].cabor%>
+                                </td>
+                                <td>
+                                    <%=cabor[i].tgl_bangun%>
+                                </td>
+                                
+                        <%} }else{ %>
+                            
+                            <% } %>
                     </tbody>
                 </table>
             </div>
