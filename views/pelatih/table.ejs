@@ -2,67 +2,48 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css">
 
 <div class="container-fluid">
-<div class="row" style="padding: 50px 20px;">
-    <div class="col">
-        <div class="card" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);">
-            <div class="card-header">Data Atlet</div>
-            <div class="card-body">
-                <table id="example" class="table table-hover table-bordered" style="width:100%;">
-                    <thead class="table-secondary">
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Tempat Lahir</th>
-                            <th>Tanggal Lahir</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Alamat</th>
-                            <th>Kecamatan</th>
-                            <th>Cabor</th>
-                            <th>Tanggal Gabung</th>
-                            <th>Jabatan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <% if(pelatih.length){ for(var i=0; i< pelatih.length; i++){%>
-                                <th scope="row" class="text-center">
-                                    <%= (i+1)%>
-                                </th>
-                                <td>
-                                    <%=pelatih[i].nama%>
-                                </td>
-                                <td>
-                                    <%=pelatih[i].tempat_lahir%>
-                                </td>
-                                <td>
-                                    <%=pelatih[i].tgl_lahir%>
-                                </td>
-                                <td>
-                                    <%=pelatih[i].jns_kelamin%>
-                                </td>
-                                <td>
-                                    <%=pelatih[i].alamat%>
-                                </td>
-                                <td>
-                                    <%=pelatih[i].kecamatan%>
-                                </td>
-                                <td>
-                                    <%=pelatih[i].cabor%>
-                                </td>
-                                <td>
-                                    <%=pelatih[i].tgl_gabung%>
-                                </td>
-                                <td>
-                                    <%=pelatih[i].jabatan%>
-                                </td>
-                        <%} }else{ %>
-                            <% } %>
-                    </tbody>
-                </table>
+    <div class="row" style="padding: 50px 20px;">
+        <div class="col">
+            <div class="card" style="box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);">
+                <div class="card-header">Data Atlet</div>
+                <div class="card-body">
+                    <table id="example" class="table table-hover table-bordered" style="width:100%;">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Tempat Lahir</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Alamat</th>
+                                <th>Kecamatan</th>
+                                <th>Cabor</th>
+                                <th>Tanggal Gabung</th>
+                                <th>Jabatan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <% if(pelatih.length){ for(var i=0; i< pelatih.length; i++){%>
+                                    <th scope="row" class="text-center"><%= (i+1)%></th>
+                                    <td><%=pelatih[i].nama%></td>
+                                    <td><%=pelatih[i].tempat_lahir%></td>
+                                    <td><%=pelatih[i].tgl_lahir%></td>
+                                    <td><%=pelatih[i].jns_kelamin%></td>
+                                    <td><%=pelatih[i].alamat%></td>
+                                    <td><%=pelatih[i].kecamatan%></td>
+                                    <td><%=pelatih[i].cabor%></td>
+                                    <td><%=pelatih[i].tgl_gabung%></td>
+                                    <td><%=pelatih[i].jabatan%></td>
+                                </tr>
+                                    <%} }else{ %>
+                                        <% } %>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -70,6 +51,6 @@
 <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function () {
-    $('#example').DataTable();
-});
+        $('#example').DataTable();
+    });
 </script>

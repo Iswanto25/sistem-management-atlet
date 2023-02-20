@@ -50,7 +50,7 @@
                                     id="model inlineFormCustomSelectPref">
                                     <option selected>Kecamatan</option>
                                     <% cabor.forEach(function(cabor){ %>
-                                        <option value="<%= pelatih.nama %>">
+                                        <option value="<%= cabor.kecamatan %>">
                                             <%= cabor.kecamatan %>
                                         </option>
                                         <%});%>
@@ -59,9 +59,9 @@
                             <div class="col form-group">
                                 <label for="cabor" class="form-label">Cabor</label>
                                 <select type="text" name="cabor" class="cabor custom-select mr-sm-2">
-                                    <option selected>Cabang Olahraga</option>
                                     <% cabor.forEach(function(cabor){ %>
-                                        <option value="<%= cabor.nama %>">
+                                    <option selected>Cabang Olahraga</option>
+                                        <option value="<%= cabor.cabor %>">
                                             <%= cabor.cabor %>
                                         </option>
                                         <%});%>
