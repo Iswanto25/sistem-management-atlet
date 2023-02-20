@@ -1,9 +1,9 @@
-<form id="add-row-form" action="/admin/edit/vanue" method="post">
+<form id="add-row-form" action="/admin/update/vanue" method="post">
     <div id="editVanue" class="modal fade">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Tambah Data Atlet</h5>
+                    <h5 class="modal-title">Edit Data Vanue</h5>
                 </div>
                 <div class="modal-body">
                     <form action="">
@@ -75,8 +75,9 @@
                     </form>
                 </div>
                 <div class="modal-footer">
+                    <input type="submit" name="id_vanue" class="id_vanue">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary id_vanue" name="id_vanue">Update</button>
                 </div>
             </div>
         </div>

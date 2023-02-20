@@ -211,15 +211,17 @@ router.post("/save/vanue", (req, res) => {
 router.post("/update/vanue", (req, res) => {
   let sql =
     "UPDATE vanue SET nama='" +
+    req.body.nik +
+    "', nama='" +
     req.body.nama +
-    "', alamat='" +
+    "',alamat='" +
     req.body.alamat +
-    "',tgl_bangun='" +
-    req.body.tgl_bangun +
     "',kecamatan='" +
     req.body.kecamatan +
     "',cabor='" +
     req.body.cabor +
+    "',tgl_bangun='" +
+    req.body.tgl_bangun +
     "' WHERE id_vanue=" +
     req.body.id_vanue;
   connection.query(sql, (err) => {
