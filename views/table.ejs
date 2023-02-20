@@ -18,22 +18,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% if(index.length){ for(var i=0; i< index.length; i++){%>
-                            <th scope="row" class="text-center">
-                                <%= (i+1)%>
-                            </th>
-                            <td>
-                                <%=index[i].nama%>
-                            </td>
-                            <td>
-                                <%=index[i].alamat%>
-                            </td>
-                            <td>
-                                <%=index[i].kecamatan%>
-                            </td>
-                            <td>
-                                <%=index[i].pelatih%>
-                            </td>
+                        <tr>
+                        <% if(atlet.length){ for(var i=0; i< atlet.length; i++){%>
+                            <th scope="row" class="text-center"><%= (i+1)%></th>
+                            <td><%=atlet[i].nama%></td>
+                            <td><%=atlet[i].alamat%></td>
+                            <td><%=atlet[i].kecamatan%></td>
+                            <td><%=atlet[i].pelatih%></td>
+                        </tr>
                     <%} }else{ %>
                         <% } %>
                     </tbody>
